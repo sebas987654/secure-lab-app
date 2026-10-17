@@ -15,3 +15,4 @@ npm start
 Pruebe: `/`, `/health`, `/api/users`, `/metrics`.
 
 Importante: `npm install` genera `package-lock.json`. Conserve y suba ese archivo a Git antes de usar `npm ci` o construir la imagen Docker.
+Práctica realizada por: CHICHO
