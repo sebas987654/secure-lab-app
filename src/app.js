@@ -1,6 +1,6 @@
 const express=require('express'); const helmet=require('helmet'); const client=require('prom-client');
 const app=express(); app.use(helmet()); app.use(express.json());
-const environment=process.env.APP_ENV||'development'; const version=process.env.APP_VERSION||'1.0.0';
+const environment=process.env.APP_ENV||'development'; const version=process.env.APP_VERSION||'1.1.0';
 client.collectDefaultMetrics();
 const requests=new client.Counter({name:'devsecops_http_requests_total',help:'Total HTTP requests',labelNames:['method','route','status','environment']});
 app.use((req,res,next)=>{res.on('finish',()=>requests.inc({method:req.method,route:req.path,status:String(res.statusCode),environment}));next();});
